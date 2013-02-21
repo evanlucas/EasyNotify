@@ -5,27 +5,26 @@
 ### How to use
 - Get theos
 
-	git clone https://github.com/DHowett/theos
+		git clone https://github.com/DHowett/theos
 
 - Clone the repo
 
-	git clone https://github.com/evanlucas/easynotify
-	cd easynotify
-	ln -s $THEOS theos		#Done so we can get a reference to theos
-	make
-	cp obj/libeasynotify.dylib $THEOS/lib
+		git clone https://github.com/evanlucas/easynotify
+		cd easynotify
+		ln -s $THEOS theos		#Done so we can get a reference to theos
+		make
+		cp obj/libeasynotify.dylib $THEOS/lib
 
 - Create a new tweak 
 
-	$THEOS/bin/nic.pl		#Follow prompts
-	cd <tweak_name>
-	cp ../easynotify/libeasynotify.h .
+		$THEOS/bin/nic.pl		#Follow prompts
+		cd <tweak_name>
+		cp ../easynotify/libeasynotify.h .
 	
 - Modify Makefile
+	Directly after `<tweak_name>_FILES`, add
 
-Directly after <tweak_name>_FILES, add
-
-		<tweak_name>_LDFLAGS = -leasynotify
+			`<tweak_name>`_LDFLAGS = -leasynotify
 
 - Open Tweak.xm
 
@@ -44,3 +43,10 @@ Directly after <tweak_name>_FILES, add
 - If EasyNotify cannot find the image, the notification will still be shown, but with no image...
 
 ### Feel free to use it in projects or whatever
+
+### Thanks:
+
+- DHowett (for theos)
+- saurik (for, well, a lot like Cydia, substrate, veency, cycript, and all of his others)
+- All other iOS developers
+
