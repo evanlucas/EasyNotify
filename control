@@ -1,0 +1,10 @@
+Package: com.curapps.easynotify
+Name: easynotify
+Depends: 
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome library of some sort!!
+Maintainer: Evan Lucas
+Author: Evan Lucas
+Section: System
+Tag: role::developer
