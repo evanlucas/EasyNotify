@@ -11,8 +11,8 @@
 
 		git clone https://github.com/evanlucas/easynotify
 		cd easynotify
-		ln -s $THEOS theos		#Done so we can get a reference to theos
-		make
+		ln -s $THEOS theos			# Done so we can get a reference to theos
+		make package install		# To get it on your device 
 		cp obj/libeasynotify.dylib $THEOS/lib
 
 - Create a new tweak 
@@ -22,9 +22,12 @@
 		cp ../easynotify/libeasynotify.h .
 	
 - Modify Makefile
-	Directly after `<tweak_name>_FILES`, add
 
-			`<tweak_name>`_LDFLAGS = -leasynotify
+Directly after `<tweak_name>_FILES`, add
+
+		<tweak_name>_LDFLAGS = -L$(THEOS_OBJ_DIR)
+		<tweak_name>_CFLAGS = -I.
+		<tweak_name>_LIBRARIES = easynotify
 
 - Open Tweak.xm
 
