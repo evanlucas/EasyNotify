@@ -5,7 +5,7 @@
 - (id)sectionIconImageWithFormat:(int)format {
 	Class EasyNotifier = objc_getClass("EasyNotifier");
 	if (!EasyNotifier) {
-		NSLog(@"Unable to grab the EasyNotifier instance");
+		NSLog(@"Unable to grab the EasyNotifier class");
 		return %orig;
 	}
     

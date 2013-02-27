@@ -4,20 +4,6 @@
 
 #define PreferencesFilePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.curapps.easynotify.plist"]
 
-@interface BBBulletin : NSObject
-- (id)sectionIconImageWithFormat:(int)format;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSString *sectionID;
-@end
-
-@interface BBBulletinRequest : BBBulletin
-@end
-
-@interface SBBulletinBannerController : NSObject
-- (void)observer:(id)observer addBulletin:(id)bulletin forFeed:(int)feed;
-@end
-
 @interface EasyNotifier ()
 - (BOOL)prefsExist;
 - (void)createEmptyPrefs;
@@ -34,7 +20,8 @@ static EasyNotifier *controller = nil;
 	return controller;
 }
 - (id)init {
-    if (self = [super init]) {
+    self = [super init];
+	if (self) {
         if (![self prefsExist]) {
             [self createEmptyPrefs];
         }

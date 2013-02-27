@@ -32,7 +32,7 @@
 		%hook SBUIController
 		- (void)finishedUnscattering {
 			%orig;
-			EasyNotifier *note = [EasyNotifer sharedInstance];
+			EasyNotifier *note = [EasyNotifier sharedInstance];
 			NSString *icon = @"path to the icon";
 			[note addImagePath:icon forBundleID:@"<whatever bundleID you want>"];
 			[note showNotificationWithTitle:@"Notification Title" message:@"Notification Message" bundleID:@"<same bundle ID as above>"];
