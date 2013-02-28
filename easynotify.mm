@@ -42,19 +42,28 @@ static EasyNotifier *controller = nil;
 }
 - (void)addImagePath:(NSString *)path forBundleID:(NSString *)bundleID {
     if ([path isEqualToString:@""]) {
-        NSLog(@"Trying to add image with empty path.");
+        NSLog(@"[EasyNotifier] - Trying to add image with empty path.");
         return;
     }
     
     if ([bundleID isEqualToString:@""]) {
-        NSLog(@"Trying to add image for empty bundle ID.");
+        NSLog(@"[EasyNotifier] - Trying to add image for empty bundle ID.");
         return;
     }
     NSMutableDictionary *d = [NSMutableDictionary dictionaryWithContentsOfFile:PreferencesFilePath];
     [d setObject:path forKey:bundleID];
     [d writeToFile:PreferencesFilePath atomically:YES];
-    
-    
+}
+
+- (void)removeBundleID:(NSString *)bundleID {
+    if ([bundleID isEqualToString:@""]) {
+        return;
+    }
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithContentsOfFile:PreferencesFilePath];
+    if ([d objectForKey:bundleID]) {
+        [d removeObjectForKey:bundleID];
+        [d writeToFile:PreferencesFilePath atomically:YES];
+    }
 }
 
 - (void)showNotificationWithTitle:(NSString *)title message:(NSString *)message bundleID:(NSString *)bundleID {
@@ -84,7 +93,7 @@ static EasyNotifier *controller = nil;
 }
 - (UIImage *)imageForBundleID:(NSString *)bundleID {
 	if (![self hasImageForBundleID:bundleID]) {
-		NSLog(@"No image provided for bundle ID: %@", bundleID);
+		NSLog(@"[EasyNotifier] - No image provided for bundle ID: %@", bundleID);
 		return nil;
 	}
 	NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:PreferencesFilePath];

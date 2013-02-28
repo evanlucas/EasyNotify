@@ -45,6 +45,13 @@ Directly after `<tweak_name>_FILES`, add
 
 - If EasyNotify cannot find the image, the notification will still be shown, but with no image...
 
+### Documentation
+
+- Generating the documentation requires that [appledoc](https://github.com/tomaz/appledoc)
+
+	./docs.sh
+
+
 ### Feel free to use it in projects or whatever
 
 ### Thanks:
@@ -52,4 +59,3 @@ Directly after `<tweak_name>_FILES`, add
 - DHowett (for theos)
 - saurik (for, well, a lot like Cydia, substrate, veency, cycript, and all of his others)
 - All other iOS developers
-

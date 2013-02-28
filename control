@@ -1,9 +1,9 @@
 Package: com.curapps.easynotify
 Name: easynotify
 Depends: 
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
-Description: An awesome library of some sort!!
+Description: A library to present banner-style notifications with any image/bundle identifier you want.
 Maintainer: Evan Lucas
 Author: Evan Lucas
 Section: System
