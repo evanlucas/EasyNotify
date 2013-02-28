@@ -47,7 +47,7 @@ Directly after `<tweak_name>_FILES`, add
 
 ### Documentation
 
-- Generating the documentation requires that [appledoc](https://github.com/tomaz/appledoc)
+- Generating the documentation requires that [appledoc](https://github.com/tomaz/appledoc) be installed
 
 	./docs.sh
 
