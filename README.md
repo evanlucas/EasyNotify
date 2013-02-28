@@ -59,3 +59,7 @@ Directly after `<tweak_name>_FILES`, add
 - DHowett (for theos)
 - saurik (for, well, a lot like Cydia, substrate, veency, cycript, and all of his others)
 - All other iOS developers
+
+### License
+
+GPL
