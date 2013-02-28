@@ -49,7 +49,7 @@ Directly after `<tweak_name>_FILES`, add
 
 - Generating the documentation requires that [appledoc](https://github.com/tomaz/appledoc) be installed
 
-	./docs.sh
+		./docs.sh
 
 
 ### Feel free to use it in projects or whatever
